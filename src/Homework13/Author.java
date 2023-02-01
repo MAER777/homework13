@@ -17,7 +17,7 @@ public class Author {
     }
 
     public String toString () {
-        return this.authorName + " Проверка делегирования версии из класса Author " + this.authorSurname;
+        return this.authorName + " " + this.authorSurname;
     }
 
 //    @Override

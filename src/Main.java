@@ -1,7 +1,4 @@
-import Homework13.Author;
-import Homework13.Book;
-import Homework13.Person;
-import Homework13.PersonService;
+import Homework13.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,33 +22,28 @@ public class Main {
     public static void task() {
         System.out.println("Задача");
         String trash = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
-        Author lefTolstoy = new Author("Лев","Толстой");
-        Author lefTolstoyCopy = new Author("Лев","Толстой");
-        Author finLand = new Author("Фин", "Ленд");
-        Author finLandCopy = new Author("Фин", "Ленд");
-        Book trashDone = new Book("Тихий Дон", lefTolstoy, 1670);
-        Book trashDoneCopy = new Book("Тихий Дон", lefTolstoy, 1670);
-        Book tinyWane = new Book("Тини Вейн", finLand, 2000);
-        Book tinyWaneCopy = new Book("Тини Вейн", finLand, 2000);
-        System.out.println(trash);
-        System.out.println(lefTolstoy);
-        System.out.println(lefTolstoyCopy);
-        System.out.println(finLand);
-        System.out.println(trash);
-        System.out.println(trashDone);
-        System.out.println(tinyWane);
-        String s = trashDone.toString();
-        System.out.println(s);
-        System.out.println(trash);
-        System.out.println(finLand.equals(finLandCopy));
-        System.out.println(lefTolstoyCopy.equals(finLandCopy));
-        System.out.println(lefTolstoy.equals(lefTolstoyCopy));
-        System.out.println(trash);
-        System.out.println(trashDone.equals(trashDoneCopy));
-        System.out.println(trashDone.equals(tinyWaneCopy));
-        System.out.println(tinyWane.equals(tinyWaneCopy));
-        System.out.println(trash);
-        System.out.println(finLand.hashCode());
-        System.out.println(lefTolstoy.hashCode());
+        Author lefTolstoy = new Author("Лев Николаевич","Толстой");
+        Author alexPushkin = new Author("Александр Сергеевич", "Пушкин");
+        Book decembrists = new Book("Декабристы", lefTolstoy, 1884);
+        Book warAndPeace = new Book("Война и Мир", lefTolstoy, 1873);
+        Book borisGodunov = new Book("Борис Годунов", alexPushkin, 1825);
+        Book mermaid = new Book("Русалка", alexPushkin, 1829);
+//        Занесем в библиотеку 4 книги.
+        Library library = new Library();
+        library.addBook(decembrists);
+        library.addBook(warAndPeace);
+        library.addBook(borisGodunov);
+        library.addBook(mermaid);
+        library.printAllBooks();
+//
+        System.out.println("Размер библиотеки: " + library.getSize());
+//
+        library.removeBook(mermaid);
+        library.findBook(warAndPeace);
+        library.removeBook(warAndPeace);
+        library.findBook(warAndPeace);
+
+        library.printAllBooks();
+
     }
 }
